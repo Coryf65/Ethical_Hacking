@@ -62,3 +62,34 @@
     ```cmd
         create parition primary
     ```
+
+9. see the Partitions we created by: `list patition`
+
+```cmd
+    Partition ###  Type              Size     Offset
+    -------------  ----------------  -------  -------
+    Partition 1    Primary            100 MB    64 KB
+  * Partition 2    Primary            859 MB   100 MB
+```
+
+10. Now select Partition 1
+
+    ```cmd
+        select partition 1
+    ```
+
+11. Format the Partition
+
+    `format quick fs=fat32 label="carving"`
+
+12. Now select the other partition
+
+    ```cmd
+        select partition 2
+    ```
+
+13. Format this partition with NTFS
+
+    `format quick fs=ntfs label="data"`
+
+14. type `exit` to quit Diskpart
