@@ -25,6 +25,8 @@
 
 ## Demo
 
+    - Looking at an image and seeing if it has multiple data streams
+
 1. open Powershell on Windows 10
 
 2. navigate to your pictures folder
@@ -66,7 +68,7 @@
     Length        : 182
 ```
 
-5. We can see this image only has one data stream `Stream        : :$DATA`
+5. We can see this image only has _One_ data stream `Stream        : :$DATA`
 
 
 ## Creating a new Data Stream
