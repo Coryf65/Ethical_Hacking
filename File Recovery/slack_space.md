@@ -1,6 +1,8 @@
 # Slack Space
 
-    -
+    - There is unused space called a slack space where indviduals could hide data.
+
+> On a Windows PC
 
 1. using fsutil we can see info about out filesystem
 
@@ -36,3 +38,35 @@
     - I have 512 Bytes per sector, and 4096 Bytes per cluster
 
 ![sector image](/_images/slackSpace.PNG)
+
+> On a Linux Machine
+
+*using a tool [bmap](https://github.com/CameronLonsdale/bmap)*
+
+1. open a Terminal
+
+2. Create a text file
+
+    `echo "slack space test" > slack.txt`
+
+3. You can see the file details running this
+
+    `cat slack.txt`
+
+4. See more File details
+
+    `ls -l slack.txt`
+
+    -rw-r--r-- 1 cory cory 17 May  1 10:21 slack.txt
+
+5.  Install Bmap tool to see how much slack space we have
+
+    `sudo bmap --mode slack slack.txt`
+
+6. Add some text into the slack space
+
+    `echo "Top Secret" | sudo bmap --mode putslack slack.txt`
+
+7. See the text file
+
+    `sudo bmap --mode slack slack.txt`
