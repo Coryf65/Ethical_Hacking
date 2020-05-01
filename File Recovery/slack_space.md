@@ -35,4 +35,4 @@
 
     - I have 512 Bytes per sector, and 4096 Bytes per cluster
 
-    ![sector image](/_images/slackSpace.PNG)
+![sector image](/_images/slackSpace.PNG)
