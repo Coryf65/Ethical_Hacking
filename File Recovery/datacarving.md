@@ -19,6 +19,7 @@
 
     - .Jpeg files always start with JFIF
 
+> using a Windows OS PC
 
 1. Plug an empty USB drive into PC
 
@@ -96,7 +97,7 @@
 
 14. type `exit` to quit Diskpart
 
-## Using a Linux Machine plugging USB stick in (to investigate)
+> Using a Linux Machine plugging USB stick in (to investigate)
 
 1. search for text finding JFIF 
 
