@@ -5,12 +5,12 @@
 - Data carving is a technique to locate the start and end of a file, as well as where its 
     fragments are in between to eventually retrieve the original file in its entirety.
 
-1. Data carving is necessary because criminals tamper with files. One of the most common temporary method 
+- Data carving is necessary because criminals tamper with files. One of the most common temporary method 
     is to delete a file, which doesn't actually erase this data but simply removes an entry in a file table, such as fat or inode.
 
-2. The second technique is to alter file extensions to mislead investigators.
+- The second technique is to alter file extensions to mislead investigators.
 
-3.  The third trick is to hide information in a slack space, which is the remaining free space after 
+-  The third trick is to hide information in a slack space, which is the remaining free space after 
         creating file in a cluster or block. Once again, data carving comes in handy here. 
 
 ## Example:
