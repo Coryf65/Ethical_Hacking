@@ -10,3 +10,8 @@
 
 3. [Alternate Data Streams](https://github.com/Coryf65/Ethical_Hacking/blob/master/File%20Recovery/AlternateDataStreams.md)
 
+## Live Acquisition
+
+    - Reading memory from RAM
+
+    - Tools used: [Volatility](https://www.volatilityfoundation.org)
