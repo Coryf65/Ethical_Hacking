@@ -15,7 +15,9 @@
 
 ## Example:
 
-    - create a partition move a Jpeg file into it and then delete it.
+    - Scenario: create a partition move a Jpeg file into it and then delete it.
+
+    - .Jpeg files always start with JFIF
 
 
 1. Plug an empty USB drive into PC
@@ -93,3 +95,47 @@
     `format quick fs=ntfs label="data"`
 
 14. type `exit` to quit Diskpart
+
+## Using a Linux Machine plugging USB stick in (to investigate)
+
+1. search for text finding JFIF 
+
+    `grep JFIF carving.dd`
+    
+    - we found a match
+
+2. Where the string match is
+
+    `grep -oba JFIF carving.dd`
+
+    - Offset value = 
+    `4198406:JFIF`
+
+4. Convert Binary to Hex
+
+    `xxd carving.dd | grep 'd9 ff'`
+
+    - you will see lots of matches but let's find closest to the offset value
+
+5. Convert Offset Value: `4198406:JFIF` to Hex for searching
+
+    `echo "obase=16; 4198406" | bc`
+
+    - `401006`
+
+6. Now we will carve the data we want out of our file
+
+    - Location of the trailer (ff d9): 0x4110a0 = 4264096
+
+    - Beginning sector number: 40106/512 = 8200
+
+    - Ending sector number: 4264096/512 = 8328
+
+    - The number of sectors to be extracted: 8328-8200 = 128 sectors
+
+7. Extract the Picture file whose size = 128 sectors
+
+    `dd if=carving.dd of=carved.jpg bs=512 skip=8200 count=128`
+
+8. Got it!
+![Recovered!](/_images/Carving_Finished.PNG)
